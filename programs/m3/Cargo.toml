@@ -1,0 +1,27 @@
+[package]
+name = "m3"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "m3"
+doctest = false
+
+[features]
+no-entrypoint = []
+no-idl = []
+cpi = ["no-entrypoint"]
+default = []
+anchor-test = []
+
+[dependencies]
+anchor-lang = { version = "0.29.0", features = ["init-if-needed"] }
+arrayref = "0.3.7"
+mpl-bubblegum = { version = "1.1.0" }
+solana-program = "~1.16"
+spl-account-compression = { version = "0.3.0", features = ["no-entrypoint"] }
+spl-associated-token-account = { version = "2.2.0", features = [
+    "no-entrypoint",
+] }
+spl-token = { version = "4.0.0", features = ["no-entrypoint"] }

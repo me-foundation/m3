@@ -1,0 +1,27 @@
+[programs.devnet]
+m3 = "M33EELRHwKvTNroQ4FNEWNyN3aHddHNWnoDbiTyB6YZ"
+
+[programs.localnet]
+m3 = { address = "M3mxk5W2tt27WGT7THox7PmgRDp4m6NEhL5xvxrBfS1", idl = "./target/idl/m3.json" }
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[scripts]
+copy_idl = "cp ./target/idl/m3.json ./src/m3.json"
+copy_types = "cp ./target/types/m3.ts ./src/m3.ts"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[test.validator]
+url = "https://api.mainnet-beta.solana.com"
+
+[features]
+seeds = false
+skip-lint = false
+
+[toolchain]
+anchor_version = "0.29.0"
+solana_version = "1.16.25"
